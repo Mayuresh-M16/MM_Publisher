@@ -1,3 +1,8 @@
+import hou
+# This script is used to export geometry in different formats based on user selection in Houdini.
+# It supports FBX, VDB, and Alembic formats.
+# The user can specify the file name and path, and the script will execute the appropriate export node.
+# The script is designed to be used within a Houdini Digital Asset (HDA) context.   
 
 def Exporting(kwargs):
 
