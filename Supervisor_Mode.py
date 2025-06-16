@@ -1,3 +1,7 @@
+import hou
+# --------------------------------------    
+# Function to handle supervisor mode login
+# --------------------------------------
 def Supervisor(kwargs):
     """
     Handles supervisor mode login for an HDA.
@@ -7,26 +11,27 @@ def Supervisor(kwargs):
     supervisor_mode_parm = hda.parm("supervisor_mode")
     folder_seq_parm = hda.parm("create")
 
-    correct_username = "test"
-    correct_password = "test123"
+    correct_username = "admin" # Replace with your actual username
+    correct_password = "password"  # Replace with your actual password
 
     # Only proceed if supervisor mode is enabled
     if supervisor_mode_parm.eval() == 1:
         # Prompt for username
-        username_input_result = hou.ui.readInput(
-            "Enter Supervisor Username:",
-            buttons=("OK", "Cancel"),
-            initial_contents="",
-            title="Supervisor Login"
+        input_result =hou.ui.readMultiInput(
+        "Enter Username and Password",
+        ("Username", "Password"),
+        buttons=("OK", "Cancel"),
+        initial_contents=("", ""),
+        password_input_indices=([1]),
         )
 
         # Check if Cancel was clicked for username input (button index 1 is Cancel)
-        if username_input_result[0] == 1:
+        if input_result[0] == 1:
             hou.ui.displayMessage("Supervisor login cancelled.", severity=hou.severityType.Warning)
             supervisor_mode_parm.set(0) # Disable supervisor mode
             return
 
-        username = username_input_result[1]
+        username = input_result[1][0]
 
         # Check if username is empty
         if not username: # This is a more Pythonic way to check for an empty string
@@ -36,22 +41,13 @@ def Supervisor(kwargs):
 
         # Check if username is correct
         if username == correct_username:
-            # Prompt for password, with masking enabled
-            password_input_result = hou.ui.readInput(
-                "Enter Password",
-                buttons=("OK", "Cancel"),
-                initial_contents="",
-                title="Supervisor Mode",
-                
-            )
-
             # Check if Cancel was clicked for password input
-            if password_input_result[0] == 1:
+            if input_result[0] == 1:
                 hou.ui.displayMessage("Supervisor login cancelled.", severity=hou.severityType.Warning)
                 supervisor_mode_parm.set(0) # Disable supervisor mode
                 return
 
-            password = password_input_result[1]
+            password = input_result[1][1]
 
             # Check if password is empty
             if not password:
