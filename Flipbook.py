@@ -1,3 +1,11 @@
+import hou
+# This script is used to generate a flipbook video from an image sequence in Houdini.   
+# It cooks the ropopengl node to process the image sequence and then uses ffmpeg to generate the video.
+# The script is designed to be used within a Houdini Digital Asset (HDA) context.
+# --------------------------------------
+# Function to handle flipbook video generation
+# --------------------------------------
+
 def Flip(kwargs):
     hda = kwargs["node"]
 
