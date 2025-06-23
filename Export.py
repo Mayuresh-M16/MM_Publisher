@@ -30,15 +30,7 @@ def Exporting(kwargs):
 
         execute_parm.pressButton()
         
-def Flip(kwargs):
-# This function is used to execute a flipbook render in Houdini.
-    
-    hda = kwargs["node"]
-    save = hda.parm("save_flip").eval()
-    flip_node = hou.node('/obj/plublisher/publisher/ropnet1/flipbook')
-    
-    execute_flip = flip_node.parm("execute")
-    execute_flip.pressButton()
+
     
     
     
