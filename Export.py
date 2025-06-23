@@ -27,8 +27,7 @@ def Exporting(kwargs):
         elif format_value == 2:
             execute_parm = abc_node.parm("execute")
             
-
-        execute_parm.pressButton()
+            execute_parm.pressButton()
         
 
     
