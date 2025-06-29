@@ -1,3 +1,5 @@
+##!/usr/bin/env python
+#
 ## --------------------------------------
 ## Imports
 ## --------------------------------------
@@ -5,74 +7,48 @@ import shotgun_api3
 from pprint import pprint # useful for debugging
 import hou
 ## --------------------------------------
-## Function to run
+## Globals
 ## --------------------------------------
-def menu(kwargs):
-    hda = kwargs["node"]
-    
-    project_choice = hda.parm("proj_name_1").eval()
-    
-    ptg = hda.type().definition().parmTemplateGroup()
-    sub_menu_template = ptg.find("sup_seq")
-
-    
-    menu_items = []
-    menu_labels = []
-
-    if project_choice == 2111:
-        menu_items = ["10370","10371","10372","10373"]
-        menu_labels = ["JWF", "MSM","WER","YUI"]
-    elif project_choice == 2103:
-        menu_items = ["10238"]
-        menu_labels = ["Test"]
-    else:
-        menu_items = []
-        menu_labels = []
-
-    sub_menu_template.setMenuItems(menu_items)
-    sub_menu_template.setMenuLabels(menu_labels)
-  
-    ptg.replace("sup_seq", sub_menu_template)
-    hda.type().definition().setParmTemplateGroup(ptg)
-
-#    sub_menu_parm = hda.parm("sup_seq")
-    
-    
-
-
 # make sure to change this to match your Flow Production Tracking server and auth credentials.
-SERVER_PATH = "https://bow-valley-college.shotgrid.autodesk.com"
-SCRIPT_NAME = 'publisher'
-SCRIPT_KEY = 'ocpg3tvungmhrUotovt*ollmx'
+SERVER_PATH = "https://bow-valley-college.shotgrid.autodesk.com" #Replace with your ShotGrid server URL
+SCRIPT_NAME = 'publisher' # Replace with your ShotGrid script name
+SCRIPT_KEY = 'ocpg3tvungmhrUotovt*ollmx' # Replace with your ShotGrid script key
 ## --------------------------------------
 ## Function to run
 ## --------------------------------------    
 def create_shot_in_shotgrid(kwargs):
+    """
+    Creates a new Shot entry in ShotGrid/Flow Productiom based on parameters from an HDA."""
+    # --------------------------------------
     hda = kwargs["node"]
     sg = shotgun_api3.Shotgun(SERVER_PATH, SCRIPT_NAME, SCRIPT_KEY)
     shot_parm = hda.parm("new_shot")
-    des_parm = hda.parm("despcrip")
-    proj_parm = hda.parm("proj_name_1")
-    seq_parm = hda.parm("sup_seq")
+    des_parm = hda.parm("desp")
+    proj_parm = hda.parm("proj_name")
+    seq_parm = hda.parm("seq_name")
     
     shot_name = shot_parm.evalAsString()
     des_name = des_parm.evalAsString()
     proj_name = proj_parm.eval()
     seq_name = int(seq_parm.evalAsString())
     
-    # --------------------------------------
-    # Create a Shot with data
-    # --------------------------------------
-    data = {
-        'project': {"type":"Project","id": proj_name},
-        'sg_sequence': {"type": "Sequence", "id": seq_name},
-        'code': shot_name,
-        'description': des_name,
-        'sg_status_list': 'ip'
-    }
-    print('sg_sequence')
-    result = sg.create('Shot', data)
-    pprint(result)
-    print("The id of the {} is {}.".format(result['type'], result['id']))
-    
-    
+    if not shot_name:
+        hou.ui.displayMessage("Shot Name not found", severity=hou.severityType.Error)
+    elif not proj_name:
+        hou.ui.displayMessage("Project not found", severity=hou.severityType.Error) 
+    elif not seq_name:
+        hou.ui.displayMessage("Sequence not found", severity=hou.severityType.Error)
+    else:        
+        # --------------------------------------
+        # Create a Shot with data
+        # --------------------------------------
+        data = {
+            'project': {"type":"Project","id": proj_name}, # Project ID should be an integer
+            'sg_sequence': {"type": "Sequence", "id": seq_name}, # Sequence ID should be an integer
+            'code': shot_name, # Name of the shot
+            'description': des_name, # Description of the shot
+            'sg_status_list': 'ip' # 'ip' stands for In Progress
+        }
+        result = sg.create('Shot', data)
+        print("The id of the {} is {}.".format(result['type'], result['id']))
+        hou.ui.displayMessage(f"Shot '{shot_name}' created successfully in ShotGrid.", severity=hou.severityType.Message) 
