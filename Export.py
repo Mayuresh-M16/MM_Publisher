@@ -13,9 +13,9 @@ def Exporting(kwargs):
     vbd_node = hda.node("filecache")
     abc_node = hda.node("rop_alembic")
 
-    if filename == "":
+    if  not filename:
         hou.ui.displayMessage("File Name not found", severity=hou.severityType.Error)
-    elif filepath == "":
+    elif not filepath:
         hou.ui.displayMessage("File Path not found", severity=hou.severityType.Error)
     else:
         if format_value == 0:
@@ -27,8 +27,9 @@ def Exporting(kwargs):
         elif format_value == 2:
             execute_parm = abc_node.parm("execute")
             
-            execute_parm.pressButton()
-        
+
+        execute_parm.pressButton()
+        hou.ui.displayMessage(f"{filename}_V00{version} : rendered successfully.", severity=hou.severityType.Message)
 
     
     
