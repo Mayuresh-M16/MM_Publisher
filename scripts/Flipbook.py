@@ -6,7 +6,7 @@ import hou
 # Function to handle flipbook video generation
 # --------------------------------------
 
-def Flip(kwargs)
+def Flip(kwargs):
 
     hda = kwargs["node"]
 

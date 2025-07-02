@@ -18,10 +18,10 @@ def flow_menu(kwargs):
     menu_items = []
     menu_labels = []
 
-    if project == ####:  # Project ID for "Flow Production Tracking"
+    if project == 0000:  # Project ID for "Flow Production Tracking"
         menu_items = ["1234","5678","9101","1121"]  # Replace with actual sequence IDs
         menu_labels = ["Sequence A", "Sequence B", "Sequence C", "Sequence D"] # Replace with actual sequence names
-    elif project == ####:  # Project ID for "Flow Production Tracking 2"
+    elif project == 0000:  # Project ID for "Flow Production Tracking 2"
         menu_items = ["10234","10400","10401","10402"] # Replace with actual sequence IDs
         menu_labels = ["Sequence X", "Sequence Y", "Sequence Z", "Sequence W"] # Replace with actual sequence names
     else:

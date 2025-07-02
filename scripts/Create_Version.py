@@ -6,14 +6,15 @@ import shotgun_api3
 # and uploads the specified video file to the corresponding ShotGrid entry. 
 
 
-def version_shotgrid(kwargs)
+ddef version_shotgrid(kwargs):
     ## --------------------------------------
     ## Globals
     ## --------------------------------------
     # make sure to change this to match your Flow Production Tracking server and auth credentials.
     SERVER_PATH = "https://my-site.shotgrid.autodesk.com"  # Replace with your ShotGrid site URL
-    SCRIPT_NAME = 'my_script'  # Replace with your ShotGrid script name 
+    SCRIPT_NAME = 'my_script'  # Replace with your ShotGrid script name
     SCRIPT_KEY = '27b65d7063f46b82e670fe807bd2b6f3fd1676c1'  # Replace with your ShotGrid script key
+    ## --------------------------------------
     
     # Houdini HDA node
     hda = kwargs["node"]
@@ -51,7 +52,7 @@ def version_shotgrid(kwargs)
         "description": descrip,
         "entity": {"type": "Shot", "id": int(shot_id)},
         "sg_path_to_movie": video_path,
-        'user': {'type': 'HumanUser', 'id': 000 } # Replace with your user ID or By default it will use Script Name
+        'user': {'type': 'HumanUser', 'id': 825} # Replace with your user ID or By default it will use Script Name
     }
 
     version = sg.create("Version", version_data)
