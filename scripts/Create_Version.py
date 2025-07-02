@@ -6,7 +6,7 @@ import shotgun_api3
 # and uploads the specified video file to the corresponding ShotGrid entry. 
 
 
-ddef version_shotgrid(kwargs):
+def version_shotgrid(kwargs):
     ## --------------------------------------
     ## Globals
     ## --------------------------------------
