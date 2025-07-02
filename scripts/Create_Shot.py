@@ -10,9 +10,9 @@ import hou
 ## Globals
 ## --------------------------------------
 # make sure to change this to match your Flow Production Tracking server and auth credentials.
-SERVER_PATH = "https://bow-valley-college.shotgrid.autodesk.com" #Replace with your ShotGrid server URL
-SCRIPT_NAME = 'publisher' # Replace with your ShotGrid script name
-SCRIPT_KEY = 'ocpg3tvungmhrUotovt*ollmx' # Replace with your ShotGrid script key
+SERVER_PATH = "https://my-site.shotgrid.autodesk.com" # Replace with your ShotGrid site URL
+SCRIPT_NAME = 'my_script' # Replace with your ShotGrid script name
+SCRIPT_KEY = '27b65d7063f46b82e670fe807bd2b6f3fd1676c1' # Replace with your ShotGrid script key
 ## --------------------------------------
 ## Function to run
 ## --------------------------------------    
