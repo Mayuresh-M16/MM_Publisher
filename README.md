@@ -1,4 +1,4 @@
-Author :- Mayuresh Mistry
+#MM_Publisher
 
 Houdini Asset Publishing Tool
 
