@@ -5,10 +5,6 @@ import shotgun_api3
 # It retrieves the sequences and shots from ShotGrid and populates the corresponding menus in the HDA.
 # It also handles the case where the sequence ID is invalid, clearing the shot menu if necessary.
 def flow_menu(kwargs):
-    """
-    Dynamically updates the 'seq_name' (Sequence) and 'shot_name' (Shot)
-    parameters in the HDA based on selected Project and Sequence from ShotGrid.
-    """
 
     hda = kwargs["node"]
     
