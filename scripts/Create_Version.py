@@ -2,7 +2,7 @@ import hou
 import os
 import shotgun_api3
 # This script uploads a video file to ShotGrid as a Version entry based on parameters from an HDA.
-# It connects to ShotGrid, retrieves project and shot information,
+# It connects to ShotGrid, retrieves project and shot information.
 # and uploads the specified video file to the corresponding ShotGrid entry. 
 
 
