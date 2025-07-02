@@ -1,0 +1,36 @@
+{
+    "env": [
+        {
+            "MM_PUBLISHER_ROOT": "" // Users will fill this in
+        },
+        {
+            "HOUDINI_PATH": "$MM_PUBLISHER_ROOT;&"
+        },
+        {
+           
+            "PYTHONPATH": "$MM_PUBLISHER_ROOT/scripts;$MM_PUBLISHER_ROOT/python_libs;&" 
+        },
+        {
+            "PDG_IMAGEMAGICK": "C:/Program Files/ImageMagick-7.1.1-Q16-HDRI/magick.exe" // User will update
+        },
+        {
+            "PDG_FFMPEG": "C:/Program Files/ImageMagick-7.1.1-Q16-HDRI/ffmpeg.exe" // User will update
+        }
+    ],
+    "houdini_version": "20.0+",
+    "name": "MM_Publisher",
+    "version": "1.0.0",
+    "description": "A Houdini tool for publishing assets, flipbooks, and managing shots within a production flow.",
+    "author": "Mayuresh Shantilal Mistry",
+    "url": "https://github.com/Mayuresh-M16/MM_Publisher",
+    "sections": [
+        {
+            "name": "MM_Publisher Tool Settings",
+            "description": "Configuration for the MM_Publisher tool."
+        },
+        {
+            "name": "External Dependencies",
+            "description": "Paths to external tools like ImageMagick and FFmpeg required by MM_Publisher."
+        }
+    ]
+}
