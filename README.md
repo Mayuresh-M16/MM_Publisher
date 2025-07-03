@@ -26,6 +26,25 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 
 ## Installation
 
+### 1. Get the Tool Itself:
+
+- **What to do:** Download or acquire the main tool's files. This might involve cloning a GitHub repository, downloading a ZIP file, or running an installer package.
+
+- **Why it's needed:** This is the core application you want to use, so you need to have its program files on your system.
+
+### 2. Install FFmpeg and ImageMagick (and Note Their Locations):
+
+- **What to do:** Install FFmpeg and ImageMagick on your computer. These are separate, powerful utilities. As you install them, pay close attention to where they are installed on your system. You'll specifically need the "path" to their executable files (e.g., `ffmpeg.exe` and `magick.exe`). `Links for [ffmpeg](https://www.gyan.dev/ffmpeg/builds/) and [imagemagick](https://imagemagick.org/script/download.php)
+
+- **Why they're needed:** Our tool relies on FFmpeg for video and audio processing (like converting formats, extracting frames, etc.) and ImageMagick for advanced image manipulation (resizing, watermarking, creating GIFs, etc.). It doesn't have these capabilities built-in; instead, it "calls upon" these external tools to do the heavy lifting. Without them, certain functions of our tool won't work.
+
+### 3. Configure `MM_Publisher.json` with Paths:
+
+- **What to do:** Locate a file named `MM_Publisher.json` (or similarly named configuration file) within the tool's directory. Open this file with a text editor (like Notepad, VS Code, Sublime Text, etc.). Inside, you'll find specific fields where you need to paste the exact paths you noted for FFmpeg and ImageMagick in the previous step. You'll also need to paste the path to where you installed this tool itself.
+
+- **Why it's needed:** This configuration file acts like a roadmap for our tool. It tells the tool exactly where to find FFmpeg and ImageMagick on your system, so when it needs to use them, it knows exactly where to look. Similarly, providing the tool's own path helps it locate its internal resources or allows other parts of the system to correctly reference it.
+
+
 
 ## Features
 
