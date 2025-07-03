@@ -10,3 +10,13 @@ I'm developing a comprehensive asset publishing tool within Houdini designed to 
 - **Features**
 - **Flow Production Integration**
 - **Working**
+
+
+### Language and Tools 
+- *Python*
+- *Houdini*
+- *Flow Production Tracking / Shotgrid*
+- *Visual Code*
+- *Github*
+- *Json*
+  
