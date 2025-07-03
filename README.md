@@ -2,14 +2,32 @@
 
 ## Overview
 
-I'm developing a comprehensive asset publishing tool within Houdini designed to streamline your export workflow. It enables direct export of FBX, VDB, and ABC files, complete with an organized working folder and version control system. Additionally, the tool offers integrated flipbook generation and direct publishing to Flow Production with a single click.
+The Houdini Asset Publishing Tool is an all-in-one solution that integrates various essential steps of the asset export and publishing process directly within Houdini. It automates the creation of organized working directories, manages version control, facilitates direct export of common asset formats, generates flipbooks, and enables one-click publishing to Flow Production, including shot creation and email notifications upon flipbook publication.
 
 ## Table of Contents
 - **Requirements**
 - **Installation**
 - **Features**
 - **Flow Production Integration**
-- **Working**
+- **Workings**
+- **Language and Tools**
+
+### Requirements
+
+
+### Installation
+
+
+### Features
+
+
+
+### Flow Production Integration
+
+
+### Workings
+
+
 
 
 ### Language and Tools 
