@@ -34,7 +34,8 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 
 ### 2. Install FFmpeg and ImageMagick (and Note Their Locations):
 
-- **What to do:** Install FFmpeg and ImageMagick on your computer. These are separate, powerful utilities. As you install them, pay close attention to where they are installed on your system. You'll specifically need the "path" to their executable files (e.g., `ffmpeg.exe` and `magick.exe`). `Links for [ffmpeg](https://www.gyan.dev/ffmpeg/builds/) and [imagemagick](https://imagemagick.org/script/download.php)
+- **What to do:** Install [FFmpeg](https://www.gyan.dev/ffmpeg/builds/) and [ImageMagick](https://imagemagick.org/script/download.php)
+ on your computer. These are separate, powerful utilities. As you install them, pay close attention to where they are installed on your system. You'll specifically need the "path" to their executable files (e.g., `ffmpeg.exe` and `magick.exe`).
 
 - **Why they're needed:** Our tool relies on FFmpeg for video and audio processing (like converting formats, extracting frames, etc.) and ImageMagick for advanced image manipulation (resizing, watermarking, creating GIFs, etc.). It doesn't have these capabilities built-in; instead, it "calls upon" these external tools to do the heavy lifting. Without them, certain functions of our tool won't work.
 
