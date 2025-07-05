@@ -14,14 +14,11 @@ The Houdini Asset Publishing Tool is an all-in-one solution that integrates vari
 This tool is designed to be an indispensable part of your Houdini workflow, enhancing productivity and integration with your production pipeline.
 
 ## Table of Contents
-- **Requirements**
 - **Installation**
 - **Features**
 - **Flow Production Integration / Shotgrid API**
 - **Implementation**
 - **Language and Tools Used**
-
-## Requirements
 
 
 ## Installation
@@ -148,11 +145,13 @@ This step establishes the connection between your Python environment and ShotGri
 
 3. Save the file as `API_instance.py.`
 4. Run the script from your terminal:
+   
    ```
    Bash
    
    python API_instance.py
    ```
+   
 If successful, the script should output a list of data, indicating a successful connection.
 
 
