@@ -79,6 +79,84 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 
 ## Flow Production Integration / Shotgrid API
 
+### 1. Setting Up Your Personal Access Token (PAT)
+
+A Personal Access Token (PAT) is required to authenticate your connection to Flow Production.
+
+1. Navigate to your **Account Settings** in Flow Production.
+2. Select **Legacy Login and Personal Access Token.**
+3. Click on **Personal Access Tokens.**
+4. For **Production Type**, choose "shortgrid".
+5. Enter a **Token Name** (e.g., "MyAPI Token").
+6. **Copy the generated token code.**
+7. Return to the token input field, paste the code, and click **Bind.**
+
+### 2. Getting the Python API
+
+Before you begin, ensure you have **Git** and **Visual Studio Code** installed on your system.
+
+1. Open your command prompt or terminal.
+2. Clone the ShotGrid Python API repository using the following command:
+
+   ````
+   Bash
+   
+   git clone https://github.com/shotgunsoftware/python-api.git
+   ````
+   This command will clone the repository into your home directory.
+
+
+### 3. Setting Up a Script on Flow Production
+
+To connect your Python API to Flow Production, you'll need to create a script. **Administrator access is required** for this step.
+
+1. Go to your **Account Settings** in Flow Production.
+2. Select **Scripts.**
+3. Click **Create a new script.**
+4. Enter a descriptive **Name** for your script.
+5. **Copy the generated Application Key and save it in a secure location.** This key will not be visible again after the script is created.
+   
+
+### 4. Connecting Python to the Python API
+
+Now, let's install the Python API on your local system.
+
+1. Open your terminal.
+2. Navigate to the directory where you cloned the Python API (e.g., cd python-api).
+3. Run the following command to install the API:
+   
+   ````
+   Bash
+   
+   python setup.py install
+    ````
+
+### 5. Creating a ShotGrid API Instance   
+
+This step establishes the connection between your Python environment and ShotGrid/Flow Production.
+
+1. Open a Python editor (e.g., in Visual Studio Code).
+2. Paste the following code, replacing the placeholder values with your actual data:
+
+    ```
+    Python
+    
+    SERVER_PATH = "https://my-site.shotgrid.autodesk.com" # Replace with your ShotGrid server path
+    SCRIPT_NAME = 'my_script' # Replace with the name of the script you created in ShotGrid
+    SCRIPT_KEY = '27b65d7063f46b82e670fe807bd2b6f3fd1676c1' # Replace with your copied Application Key
+    ```
+
+3. Save the file as `API_instance.py.`
+4. Run the script from your terminal:
+   ```
+   Bash
+   
+   python API_instance.py
+   ```
+If successful, the script should output a list of data, indicating a successful connection.
+
+
+
 
 ## Implementation
 
