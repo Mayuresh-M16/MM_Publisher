@@ -18,7 +18,7 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 - **Features**
 - **Flow Production Integration / Shotgrid API**
 - **Implementation**
-- **Language and Tools Used**
+- **Technologies Used**
 
 
 ## Installation
@@ -162,9 +162,11 @@ If successful, the script should output a list of data, indicating a successful 
 
 
 
-## Language and Tools Used
+## Technologies Used
 - *Python*
+- *Shotgrid API*
 - *Houdini*
+- *HDA(Houdini UI)*
 - *Flow Production Tracking / Shotgrid*
 - *Visual Code*
 - *Github*
