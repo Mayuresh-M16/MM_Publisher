@@ -1,4 +1,9 @@
-# MM_Publisher: Houdini Asset Publishing Tool
+# Houdini Asset Publishing Tool 
+
+<div align="center">
+  <a target="_blank"> <img height="500" width="350" alt="PNG" src="https://mayureshm.com/wp-content/uploads/2025/07/MM_Publisher-logo-1.png">
+  </a>
+</div>
 
 ## Overview
 
@@ -14,12 +19,20 @@ The Houdini Asset Publishing Tool is an all-in-one solution that integrates vari
 This tool is designed to be an indispensable part of your Houdini workflow, enhancing productivity and integration with your production pipeline.
 
 ## Table of Contents
-- **Installation**
-- **Features**
-- **Flow Production Integration / Shotgrid API**
-- **Implementation**
-- **Technologies Used**
+- [**Technologies Used**](#technologies-used)
+- [**Installation**](#installation)
+- [**Features**](#features)
+- [**Flow Production Integration / Shotgrid API**](#flow-production-integration--shotgrid-api)
 
+## Technologies Used
+- *Python*
+- *Shotgrid API*
+- *Houdini*
+- *HDA(Houdini UI)*
+- *Flow Production Tracking / Shotgrid*
+- *Visual Code*
+- *Github*
+- *Json*
 
 ## Installation
 
@@ -156,19 +169,4 @@ If successful, the script should output a list of data, indicating a successful 
 
 
 
-
-## Implementation
-
-
-
-
-## Technologies Used
-- *Python*
-- *Shotgrid API*
-- *Houdini*
-- *HDA(Houdini UI)*
-- *Flow Production Tracking / Shotgrid*
-- *Visual Code*
-- *Github*
-- *Json*
   
