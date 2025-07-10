@@ -34,7 +34,6 @@ def flow_menu(kwargs):
     ptg.replace("seq_name", sub_menu_template) # Replace the existing 'seq_name' parameter template with the updated one
     hda.type().definition().setParmTemplateGroup(ptg)  # Update the HDA definition with the new parameter template group
 
-
     # make sure to change this to match your Flow Production Tracking server and auth credentials.
     SERVER_PATH = "https://my-site.shotgrid.autodesk.com" # Replace with your ShotGrid site URL
     SCRIPT_NAME = 'my_script' # Replace with your ShotGrid script name
@@ -55,7 +54,6 @@ def flow_menu(kwargs):
         print(f"Warning: Invalid sequence ID '{sequence_id_str}' obtained. Expected an integer.")
         print("Clearing shot menu as sequence ID is invalid.")
     
-
         ptg = hda.type().definition().parmTemplateGroup()
         sub_menu_template = ptg.find("shot_name")
         sub_menu_template.setMenuItems([])
@@ -73,7 +71,6 @@ def flow_menu(kwargs):
     menu_labels = []
 
     if all_shots:
-#        print(f"Shots found for sequence ID: {sequence_id}")
         shot_data = []
         for shot in all_shots:
             shot_name = shot.get('code')
@@ -88,7 +85,7 @@ def flow_menu(kwargs):
 
     else:
         if supervisor == 0:
-            hou.ui.displayMessage(f"No shots found in selected sequence", severity=hou.severityType.ImportantMessage)
+            hou.ui.displayMessage("Warning: No shots found in the selected sequence.", severity=hou.severityType.ImportantMessage)
         menu_items = []
         menu_labels = []
 
