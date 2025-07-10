@@ -11,10 +11,10 @@
             "PYTHONPATH": "$MM_PUBLISHER_ROOT/scripts;$MM_PUBLISHER_ROOT/python_libs;&" 
         },
         {
-            "PDG_IMAGEMAGICK": "C:/Program Files/ImageMagick-7.1.1-Q16-HDRI/magick.exe" // User will update
+            "PDG_IMAGEMAGICK": "" // User will update
         },
         {
-            "PDG_FFMPEG": "C:/Program Files/ImageMagick-7.1.1-Q16-HDRI/ffmpeg.exe" // User will update
+            "PDG_FFMPEG": "" // User will update
         }
     ],
     "houdini_version": "20.0+",
