@@ -27,7 +27,7 @@ def Supervisor(kwargs):
 
         # Check if Cancel was clicked for username input (button index 1 is Cancel)
         if input_result[0] == 1:
-            hou.ui.displayMessage("Supervisor login cancelled.", severity=hou.severityType.Warning)
+            hou.ui.displayMessage("Supervisor authentication cancelled.", severity=hou.severityType.Warning)
             supervisor_mode_parm.set(0) # Disable supervisor mode
             return
 
