@@ -8,6 +8,7 @@ def Exporting(kwargs):
     hda = kwargs["node"]
     filename = hda.parm("file_name").evalAsString()
     filepath = hda.parm("file_path").evalAsString()
+    
     format_value = hda.parm("export").eval()
     fbx_node = hda.node("rop_fbx")
     vbd_node = hda.node("filecache")
@@ -29,8 +30,7 @@ def Exporting(kwargs):
             
 
         execute_parm.pressButton()
-        hou.ui.displayMessage(f"{filename}_V00{version} : rendered successfully.", severity=hou.severityType.Message)
-
+        hou.ui.displayMessage(f"Render complete! '{filename}_V00{version}' was rendered successfully.", severity=hou.severityType.Message)
     
     
     
