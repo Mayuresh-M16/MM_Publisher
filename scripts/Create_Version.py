@@ -38,7 +38,7 @@ def version_shotgrid(kwargs):
     # Find the project
     project = project_id
     if not project:
-        raise RuntimeError(f"Project '{project_name}' not found in ShotGrid.")
+        raise RuntimeError(f"Project '{project_name}' not found in Flow Production.")
 
     # Find the Shot
     shot = shot_id
@@ -52,7 +52,7 @@ def version_shotgrid(kwargs):
         "description": descrip,
         "entity": {"type": "Shot", "id": int(shot_id)},
         "sg_path_to_movie": video_path,
-        'user': {'type': 'HumanUser', 'id': 825} # Replace with your user ID or By default it will use Script Name
+        'user': {'type': 'HumanUser', 'id': 123} # Replace with your user ID or By default it will use Script Name
     }
 
     version = sg.create("Version", version_data)
@@ -61,5 +61,5 @@ def version_shotgrid(kwargs):
     sg.upload("Version", version["id"], video_path, field_name="sg_uploaded_movie")
 
     # Optionally, you can set the status of the version
-    hou.ui.displayMessage(f"Version {version['code']} uploaded successfully to ShotGrid.", severity=hou.severityType.Message)
+    hou.ui.displayMessage(f"Version {version['code']} uploaded successfully to Flow Production.", severity=hou.severityType.Message)
 
