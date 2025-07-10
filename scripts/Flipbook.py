@@ -5,7 +5,6 @@ import hou
 # --------------------------------------
 # Function to handle flipbook video generation
 # --------------------------------------
-
 def Flip(kwargs):
 
     hda = kwargs["node"]
@@ -41,9 +40,9 @@ def Flip(kwargs):
         print("image sequence process completed")
         
         print("video generation process started")
-        ffmpeg_node.cook()
+        ffmpeg_node.cook()    
         
         ffmpeg_node.cookWorkItems(block=True)
         print("video generation process completed")
 
-        hou.ui.displayMessage("Flipbook generated successfully.", severity=hou.severityType.Message)  
+        hou.ui.displayMessage("Flipbook '{filename}' successfully generated.", severity=hou.severityType.Message)
