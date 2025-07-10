@@ -51,4 +51,4 @@ def create_shot_in_shotgrid(kwargs):
         }
         result = sg.create('Shot', data)
         print("The id of the {} is {}.".format(result['type'], result['id']))
-        hou.ui.displayMessage(f"Shot '{shot_name}' created successfully in ShotGrid.", severity=hou.severityType.Message) 
+        hou.ui.displayMessage(f"Shot '{shot_name}' created successfully in Flow Production.", severity=hou.severityType.Message) 
