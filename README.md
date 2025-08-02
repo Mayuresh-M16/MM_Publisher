@@ -23,6 +23,7 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 - [**Installation**](#installation)
 - [**Features**](#features)
 - [**Flow Production Integration / Shotgrid API**](#flow-production-integration--shotgrid-api)
+- [**Tool Roadmap**](#tool-roadmap)
 
 ## Technologies Used
 - *Python*
@@ -55,7 +56,21 @@ This tool is designed to be an indispensable part of your Houdini workflow, enha
 
 - **Why it's needed:** This configuration file acts like a roadmap for our tool. It tells the tool exactly where to find FFmpeg and ImageMagick on your system, so when it needs to use them, it knows exactly where to look. Similarly, providing the tool's own path helps it locate its internal resources or allows other parts of the system to correctly reference it.
 
+### 4. Configure Python Files for Flow Production Connection:
 
+To use this tool, open `Flow_Menu.py`, `Create_Version.py`, and `Create_Shot.py`. In each of these files, you'll need to update the following variables for connection to your Flow Production page and to define your project details:
+
+- **SERVER_PATH:** This is the URL of your Flow Production server.
+
+- **SCRIPT_NAME:** This is the name of the script you are using for authentication.
+
+- **SCRIPT_KEY:** This is the API key associated with your script for authentication.
+
+- **Project ID:** The unique identifier for your project in Flow Production.
+
+- **Sequence ID:** The unique identifier for your sequence within your project.
+
+By updating these values, you'll ensure the tool correctly interacts with your Flow Production environment.
 
 ## Features
 
@@ -177,6 +192,71 @@ This step establishes the connection between your Python environment and ShotGri
    ```
    
 If successful, the script should output a list of data, indicating a successful connection.
+
+## Tool Roadmap
+
+This roadmap shows how we plan to make the Houdini Asset Publishing Tool easier to use, set up, and install.
+
+### Phase 1: Easy Setup with `Flow.json`
+Right now, you have to change Python files to connect the tool to Flow Production. In this phase, we'll put all those settings (like server address, script name, and project details) into one simple file called `Flow.json`.
+
+**What we'll do:**
+- **Create** `Flow.json`: We'll make a new file where you can easily type in your Flow Production connection details and project information.
+
+- **Read from** `Flow.json`: The tool will learn to read these settings from the `Flow.json` file, so you don't have to touch the Python code.
+
+- **Handle Mistakes:** If the `Flow.json` file is missing or has errors, the tool will tell you what's wrong.
+
+- **Clear Instructions:** We'll update the `README.md` to clearly explain how to set up your `Flow.json` file.
+
+**How we'll do it:**
+- We'll use Python's built-in tools to read and write JSON files.
+
+- We'll add a quick check to make sure all the important settings are in the `Flow.json` file.
+
+### Phase 2: Better Look and Feel with PyQt
+This phase is all about making the tool's interface much nicer and easier to use. We'll rebuild it using PyQt, which helps create good-looking and responsive programs.
+
+**What we'll do:**
+- **New Design:** We'll create a fresh, modern look for the tool's interface, with clear buttons and options for everything it does (like exporting assets, making previews, and publishing).
+
+- **Easy Settings:** You'll be able to change your `Flow.json` settings directly within the new tool's interface, no need to open the file manually.
+
+- **Show Progress:** When the tool is working on something big (like making a video preview or publishing), you'll see progress bars and messages so you know what's happening.
+
+**How we'll do it:**
+- We'll decide between PyQt5 or PyQt6 for building the interface.
+
+- We'll keep the visual parts of the tool separate from the actual working code, which makes it easier to manage.
+
+- We'll figure out the best way to open and use this new interface from within Houdini.
+
+### Phase 3: One-Click Installation for Everyone
+This phase will make installing the tool super simple. We'll create a script that handles everything for you, whether you're on Windows or Linux.
+
+**What we'll do:**
+- **Smart Installer:** We'll write a main Python script that does all the installation work.
+
+- **Simple Launchers:** We'll create small `.bat` (for Windows) and `.sh` (for Linux/macOS) files that you just click to start the installer.
+
+- **Install What's Needed:** The installer will automatically set up a special Python environment for the tool and install all the necessary Python parts (like `shotgun_api3` and PyQt).
+
+- **Help with Other Tools:** It will check if you have FFmpeg and ImageMagick. If not, it will tell you how to get them, or try to download and set them up automatically if possible.
+
+- **Place Files Correctly:** The installer will put all the tool's files where they need to go for Houdini to find them.
+
+- **Initial Setup:** The installer will ask you for your main Flow Production details and create the `Flow.json` file for you.
+
+- **Report Problems:** If anything goes wrong during installation, the script will tell you what happened and how to fix it.
+
+**How we'll do it:**
+- The core installation will be handled by a Python script that runs commands on your computer.
+
+- The `.bat` and `.sh` files will just be simple ways to start this Python script.
+
+- We'll look into ways to install things without you having to click through many windows.
+
+- We'll make sure the tool's Python parts are kept separate from other Python programs on your computer.
 
 
 
